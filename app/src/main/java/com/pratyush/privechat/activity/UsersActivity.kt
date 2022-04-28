@@ -76,8 +76,10 @@ class UsersActivity : AppCompatActivity() {
                 userList.clear()
                 val currentUser = snapshot.getValue(User::class.java)
                 if (currentUser!!.profileImage == ""){
+                    Toast.makeText(applicationContext,"a",Toast.LENGTH_SHORT).show()
                     binding.imgProfile.setImageResource(com.pratyush.privechat.R.drawable.profile_image)
                 }else{
+                    Toast.makeText(applicationContext,"b",Toast.LENGTH_SHORT).show()
                     Glide.with(this@UsersActivity).load(currentUser.profileImage).into(binding.imgProfile)
                 }
 

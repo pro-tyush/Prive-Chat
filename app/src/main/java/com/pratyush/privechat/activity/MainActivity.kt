@@ -1,6 +1,8 @@
 package com.pratyush.privechat.activity
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
@@ -11,8 +13,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        val intent = Intent(this,
-            SignUpActivity::class.java)
+
+        val sharedPreferences: SharedPreferences = this.getSharedPreferences("my_pref", Context.MODE_PRIVATE)
+        val intent = when {
+            sharedPreferences.getBoolean("loggedin",false) -> {
+                Intent(this, UsersActivity::class.java)
+            }
+            else -> {
+                Intent(this,SignUpActivity::class.java)
+            }
+        }
         startActivity(intent)
         finish()
     }

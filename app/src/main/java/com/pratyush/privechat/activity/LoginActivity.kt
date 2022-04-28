@@ -1,6 +1,8 @@
 package com.pratyush.privechat.activity
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -52,6 +54,7 @@ class LoginActivity : AppCompatActivity() {
                                 UsersActivity::class.java
                             )
                             startActivity(intent)
+                            saveLoggedInBoolean()
                             finish()
                         } else {
                             Toast.makeText(
@@ -72,5 +75,13 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+
+    }
+    private fun saveLoggedInBoolean(){
+        val sharedPreferences: SharedPreferences = this.getSharedPreferences("my_pref", Context.MODE_PRIVATE)
+        val editor:SharedPreferences.Editor =  sharedPreferences.edit()
+        editor.putBoolean("loggedin",true)
+        editor.apply()
     }
 }
