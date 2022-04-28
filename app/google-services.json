@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1022475964248",
+    "project_id": "privechat-4d0a2",
+    "storage_bucket": "privechat-4d0a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1022475964248:android:e0a08438f51855b0d25f2d",
+        "android_client_info": {
+          "package_name": "com.pratyush.privechat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1022475964248-uc5p7rdd3qavr2fge86pst3g2nuo7qc5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiZ8F7f3QZScy0iDOou3lYB1OLf6VKhAM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1022475964248-uc5p7rdd3qavr2fge86pst3g2nuo7qc5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
