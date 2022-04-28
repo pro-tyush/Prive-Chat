@@ -33,7 +33,7 @@
             android:textStyle="bold" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imgProfile"
+            android:id="@+id/settings_button"
             android:layout_width="0dp"
             android:layout_weight="0.5"
             android:layout_height="42dp"

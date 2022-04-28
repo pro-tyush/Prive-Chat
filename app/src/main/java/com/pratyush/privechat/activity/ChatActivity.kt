@@ -68,9 +68,9 @@ class ChatActivity : AppCompatActivity() {
                 binding.tvUserName.text = user!!.userName
                 if (user.profileImage == "") {
 //                    binding.imgProfile.setImageResource(com.google.firebase.database.R.drawable.profile_image)
-                    binding.imgProfile.setImageResource(R.drawable.profile_image)
+
                 } else {
-                    Glide.with(this@ChatActivity).load(user.profileImage).into(binding.imgProfile)
+
                 }
             }
         })

@@ -7,6 +7,7 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -40,13 +41,13 @@ class UsersActivity : AppCompatActivity() {
         }
 
 
-        binding.userRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
+        binding.userRecyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
         binding.imgBack.setOnClickListener {
             onBackPressed()
         }
 
-        binding.imgProfile.setOnClickListener {
+        binding.settingsButton.setOnClickListener {
             val intent = Intent(
                 this@UsersActivity,
                 ProfileActivity::class.java
@@ -77,10 +78,10 @@ class UsersActivity : AppCompatActivity() {
                 val currentUser = snapshot.getValue(User::class.java)
                 if (currentUser!!.profileImage == ""){
                     Toast.makeText(applicationContext,"a",Toast.LENGTH_SHORT).show()
-                    binding.imgProfile.setImageResource(com.pratyush.privechat.R.drawable.profile_image)
+
                 }else{
                     Toast.makeText(applicationContext,"b",Toast.LENGTH_SHORT).show()
-                    Glide.with(this@UsersActivity).load(currentUser.profileImage).into(binding.imgProfile)
+
                 }
 
                 for (dataSnapShot: DataSnapshot in snapshot.children) {
